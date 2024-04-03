@@ -1,4 +1,4 @@
-import { SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import { MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
 import { Server } from 'socket.io';
 
 @WebSocketGateway({
@@ -10,5 +10,5 @@ export class SocketGateway {
 
 
     @SubscribeMessage('join')
-    
+    subscribeUserOnActions(@MessageBody() data: any ){}
 }
